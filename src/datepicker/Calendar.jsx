@@ -11,6 +11,11 @@ class Calendar extends React.Component {
     selected: moment(),
   }
 
+  componentWillMount() {
+    const { date } = this.props;
+    this.setState({ date: moment(date) });
+  }
+
   onLeft = () => {
     const { date, selected } = this.state;
     this.setState({
@@ -27,7 +32,7 @@ class Calendar extends React.Component {
     });
   }
 
-  onSelect = date => {
+  onSelect = (date) => {
     this.setState({
       date,
       selected: moment(date._d),
@@ -69,5 +74,11 @@ class Calendar extends React.Component {
     );
   }
 }
+
+Calendar.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  date: PropTypes.instanceOf(moment),
+};
 
 export default Calendar;

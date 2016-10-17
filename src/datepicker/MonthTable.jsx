@@ -4,13 +4,13 @@ import Day from './Day.jsx';
 
 class MonthTable extends React.Component {
 
-  mapColumns = day => (<th key={day}>{day.substring(0, 3)}</th>)
-
   onSelect = ({ target: { textContent: day } }) => {
     const { onSelect, date } = this.props;
     const selectedDate = moment([date.year(), date.month(), Number(day)]);
     onSelect(selectedDate);
   }
+
+  mapColumns = day => (<th key={day}>{day.substring(0, 3)}</th>)
 
   createRows = () => {
     const { date } = this.props;
@@ -27,36 +27,32 @@ class MonthTable extends React.Component {
     let count = 0;
 
     const rows = [...Array(6)].map((_, r) => {
-      const columns = [...Array(7)].map((_, c) => {
-
-        const currentDay = (currentMonth === month && currentDay === dayOfMonth) ? 'current-day' : '';
+      const columns = [...Array(7)].map((x, c) => {
+        const currentDayClass = (currentMonth === month && currentDay === dayOfMonth) ? 'current-day' : '';
         const selectedDay = (dayOfMonth === count) ? 'selected' : '';
-
-        const className = ` ${currentDay} ${selectedDay} `;
-
-        if(count === lastDay) {
+        const className = ` ${currentDayClass} ${selectedDay} `;
+        if (count === lastDay) {
           count = 0;
         }
-        if(r === 0 && c === firstDay || count > 0) {
+        if ((r === 0 && c === firstDay) || count > 0) {
           count += 1;
         }
         const key = `datepicker-${r}-${c}-day-${count}`;
-        return <Day
-          onSelect={this.onSelect}
-          key={key}
-          day={count}
-          className={className}
-        />;
+        return (
+          <Day
+            onSelect={this.onSelect}
+            key={key}
+            day={count}
+            className={className}
+          />
+        );
       });
       return <tr key={`datepicker-row-${r}`}>{columns}</tr>;
     });
-
     return rows;
-
   }
 
   render() {
-
     const columns = moment.weekdays().map(this.mapColumns);
     const rows = this.createRows();
     const table = (
@@ -76,5 +72,10 @@ class MonthTable extends React.Component {
     );
   }
 }
+
+MonthTable.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  date: PropTypes.instanceOf(moment),
+};
 
 export default MonthTable;

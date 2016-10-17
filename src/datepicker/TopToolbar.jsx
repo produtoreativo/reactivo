@@ -1,20 +1,22 @@
 import React, { PropTypes } from 'react';
+import moment from 'moment';
 
-class TopToolbar extends React.Component {
-  render () {
-    const date = this.props.date.format('MMMM YYYY');
-    return (
-      <div>
-        <button onClick={this.props.onLeft} >
-          Voltar
-        </button>
-        <div>{date}</div>
-        <button onClick={this.props.onRight} >
-          Avançar
-        </button>
-      </div>
-    );
-  }
-}
+const TopToolbar = ({ onLeft, date, onRight }) => (
+  <div>
+    <button onClick={onLeft} >
+      Voltar
+    </button>
+    <div>{date.format('MMMM YYYY')}</div>
+    <button onClick={onRight} >
+      Avançar
+    </button>
+  </div>
+);
+
+TopToolbar.propTypes = {
+  onLeft: PropTypes.func.isRequired,
+  onRight: PropTypes.func.isRequired,
+  date: PropTypes.instanceOf(moment),
+};
 
 export default TopToolbar;

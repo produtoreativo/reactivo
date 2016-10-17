@@ -12,6 +12,8 @@
   },
   "globals": {
     "localStorageDB": true,
+    "App": true,
+    "Greenmile": true,
     "Monet": true
   },
   /*
@@ -30,8 +32,11 @@
   },
   /* Sobrescrevemos algumas rules do airbnb e do próprio eslint */
   rules: {
+    "jsx-a11y/no-static-element-interactions": 1,
     "react/no-string-refs": 1,
+    "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/extensions": 0,
     "import/no-unresolved": 0,
     "import/no-extraneous-dependencies": 0,
     "new-cap": ["error", {

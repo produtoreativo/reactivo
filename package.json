@@ -4,6 +4,8 @@
   "description": "\"Material Design in React\"",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/datepicker --ext .jsx --ext .js",
+    "watch:js": "watchify app/app.jsx -m -d -v -o public/assets/js/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,5 +48,10 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }
