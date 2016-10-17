@@ -43,11 +43,20 @@ class DatePicker extends React.Component {
 
     return (
       <div>
-        <div>
-          <input value={value} readOnly onClick={this.onClick} type="text" />
+
+        <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input
+            className="mdl-textfield__input"
+            type="text"
+            id="datepicker"
+            value={value}
+            readOnly
+            onClick={this.onClick}
+          />
+        <label className="mdl-textfield__label" htmlFor="datepicker">DatePicker...</label>
         </div>
         <div>
-          <dialog ref="dialog">
+          <dialog ref="dialog" className="mdl-dialog">
             <Calendar
               date={date}
               onClose={this.onClose}

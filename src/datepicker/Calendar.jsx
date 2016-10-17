@@ -49,8 +49,8 @@ class Calendar extends React.Component {
     const year = selected.format('YYYY');
     const dayOfWeek = selected.format('ddd, MMM DD');
     return (
-      <div className="Calendar">
-        <div className="SelectedDate">
+      <div className="Calendar mdl-dialog__content">
+        <div className="SelectedDate mdl-color--primary">
           <div className="year">
             {year}
           </div>

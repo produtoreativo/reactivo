@@ -1,57 +1,35 @@
 {
   "name": "reactivo",
   "version": "1.0.0",
-  "description": "\"Material Design in React\"",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint src/datepicker --ext .jsx --ext .js",
-    "watch:js": "watchify app/app.jsx -m -d -v -o public/assets/js/bundle.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Material Design in React",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cmilfont/reactivo.git"
   },
   "keywords": [
-    "[\"material",
-    "design\"",
-    "\"react\"]"
+    "material design",
+    "react"
   ],
-  "author": "\"Christiano Milfont\"",
+  "author": "Christiano Milfont - @cmilfont",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cmilfont/reactivo/issues"
   },
   "homepage": "https://github.com/cmilfont/reactivo#readme",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.6.1"
+  },
   "dependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-eslint": "^7.0.0",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.14.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.1.0",
     "dialog-polyfill": "^0.4.4",
-    "eslint": "^3.7.1",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-config-standard": "^6.2.0",
-    "eslint-config-standard-react": "^4.2.0",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-promise": "^3.0.0",
-    "eslint-plugin-react": "^6.4.0",
-    "eslint-plugin-standard": "^2.0.1",
     "moment": "^2.15.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "watchify": "^3.7.0"
+    "react-dom": "^15.3.2"
   },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

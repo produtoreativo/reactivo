@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
 const BottomToolbar = ({ onClose, onChange }) => (
-  <div className="BottomToolbar">
-    <button onClick={onClose}>Close</button>
-    <button onClick={onChange}>Ok</button>
+  <div className="mdl-dialog__actions">
+    <button type="button" className="mdl-button mdl-color-text--accent" onClick={onChange}>Ok</button>
+    <button type="button" className="mdl-button mdl-color-text--accent close" onClick={onClose}>Close</button>
   </div>
 );
 

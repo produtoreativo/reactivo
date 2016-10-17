@@ -2,13 +2,19 @@ import React, { PropTypes } from 'react';
 import moment from 'moment';
 
 const TopToolbar = ({ onLeft, date, onRight }) => (
-  <div>
-    <button onClick={onLeft} >
-      Voltar
+  <div className="TopToolbar">
+    <button
+      onClick={onLeft}
+      className="mdl-button mdl-js-button mdl-button--icon"
+    >
+      <i className="material-icons">keyboard_arrow_left</i>
     </button>
-    <div>{date.format('MMMM YYYY')}</div>
-    <button onClick={onRight} >
-      Avançar
+    <div className="formatted-month">{date.format('MMMM YYYY')}</div>
+    <button
+      onClick={onRight}
+      className="mdl-button mdl-js-button mdl-button--icon"
+    >
+      <i className="material-icons">keyboard_arrow_right</i>
     </button>
   </div>
 );
