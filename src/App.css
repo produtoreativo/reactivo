@@ -69,3 +69,18 @@ table {
 thead {
   opacity: 0.5;
 }
+
+
+.closeable {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.closeable .material-icons {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  cursor: pointer;
+}
