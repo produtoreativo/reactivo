@@ -1,10 +1,10 @@
 {
   "name": "reactivo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Material Design in React",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cmilfont/reactivo.git"
+    "url": "git+https://github.com/produtoreativo/reactivo.git"
   },
   "keywords": [
     "material design",
@@ -13,9 +13,9 @@
   "author": "Christiano Milfont - @cmilfont",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cmilfont/reactivo/issues"
+    "url": "https://github.com/produtoreativo/reactivo/issues"
   },
-  "homepage": "https://github.com/cmilfont/reactivo#readme",
+  "homepage": "https://github.com/produtoreativo/reactivo#readme",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.6.1"
