@@ -28,15 +28,15 @@ class MonthTable extends React.Component {
 
     const rows = [...Array(6)].map((_, r) => {
       const columns = [...Array(7)].map((x, c) => {
-        const currentDayClass = (currentMonth === month && currentDay === dayOfMonth) ? 'current-day' : '';
-        const selectedDay = (dayOfMonth === count) ? 'selected' : '';
-        const className = ` ${currentDayClass} ${selectedDay} `;
         if (count === lastDay) {
           count = 0;
         }
         if ((r === 0 && c === firstDay) || count > 0) {
           count += 1;
         }
+        const currentDayClass = (currentMonth === month && count === currentDay) ? 'current-day' : '';
+        const selectedDay = (dayOfMonth === count) ? 'selected' : '';
+        const className = ` ${currentDayClass} ${selectedDay} `;
         const key = `datepicker-${r}-${c}-day-${count}`;
         return (
           <Day

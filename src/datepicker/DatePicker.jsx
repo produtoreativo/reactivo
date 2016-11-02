@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
 import moment from 'moment';
 import Calendar from './Calendar.jsx';
+import TextField from 'textfield/TextField.jsx';
 
 class DatePicker extends React.Component {
 
@@ -43,18 +44,12 @@ class DatePicker extends React.Component {
 
     return (
       <div>
-
-        <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input
-            className="mdl-textfield__input"
-            type="text"
-            id="datepicker"
-            value={value}
-            readOnly
-            onClick={this.onClick}
-          />
-        <label className="mdl-textfield__label" htmlFor="datepicker">DatePicker...</label>
-        </div>
+        <TextField
+          labelName="DatePicker..."
+          value={value}
+          onClick={this.onClick}
+          errors={["Erro na validação"]}
+        />
         <div>
           <dialog ref="dialog" className="mdl-dialog">
             <Calendar
