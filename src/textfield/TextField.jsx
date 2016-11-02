@@ -27,13 +27,20 @@ class TextField extends React.Component {
   }
 
   mapErrors = () => {
-    const { errors } = this.props;
+    const errors = this.props.errors || [];
     return errors.map(error => (<b>{error}</b>));
+  }
+
+  handleBlur = () => {
+    this.setState({
+      ...this.state,
+      focused: false,
+    });
   }
 
   render () {
     const { focused, invalid } = this.state;
-    const { labelName, value, onClick } = this.props;
+    const { labelName, name, value, onClick, onChange } = this.props;
     const isFocused = (focused) ? 'is-focused' : '';
     const isInvalid = (invalid) ? 'is-invalid' : '';
     const errors = this.mapErrors();
@@ -43,9 +50,11 @@ class TextField extends React.Component {
           className="mdl-textfield__input"
           type="text"
           id="datepicker"
+          name={name}
           value={value}
-          readOnly
+          onChange={onChange}
           onFocus={this.onFocus}
+          onBlur={this.handleBlur}
           onClick={onClick}
         />
         <label className="mdl-textfield__label" htmlFor="datepicker">{labelName}</label>

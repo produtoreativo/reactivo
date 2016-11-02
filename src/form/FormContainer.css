@@ -1,0 +1,31 @@
+
+.FormContainer--body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.FormContainer--body .FormSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.FormContainer--body .FormSectionButtons {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.FormContainer--body .FormSectionButtons .reactivo-button {
+    margin: .2rem;
+}
+
+.FormContainer--body .FormSection .FormSectionFields {
+  display: flex;
+}
+
+.FormContainer--body .FormSection .FormSectionFields .FormSectionColumn {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}

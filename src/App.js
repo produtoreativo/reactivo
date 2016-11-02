@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DatePicker from './datepicker';
 import Tabs, { Tab } from 'tabs';
+import FormContainer from 'form/FormContainer.jsx';
+import metadata from 'Seed.js';
 import './App.css';
 
 class App extends Component {
@@ -47,6 +49,9 @@ class App extends Component {
         </Tabs>
 
         <DatePicker onChange={onChange} />
+
+        <FormContainer metadata={metadata} />
+
       </div>
     );
   }
