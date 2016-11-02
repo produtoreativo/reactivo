@@ -16,7 +16,6 @@
     "url": "https://github.com/produtoreativo/reactivo/issues"
   },
   "homepage": "https://github.com/produtoreativo/reactivo#readme",
-  "private": true,
   "devDependencies": {
     "react-scripts": "0.6.1"
   },
