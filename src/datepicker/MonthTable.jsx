@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 import Day from './Day.jsx';
+import './MonthTable.css';
+import './Day.css';
 
 class MonthTable extends React.Component {
 
@@ -34,9 +36,9 @@ class MonthTable extends React.Component {
         if ((r === 0 && c === firstDay) || count > 0) {
           count += 1;
         }
-        const currentDayClass = (currentMonth === month && count === currentDay) ? 'current-day' : '';
-        const selectedDay = (dayOfMonth === count) ? 'selected' : '';
-        const className = ` ${currentDayClass} ${selectedDay} `;
+        const currentDayClass = (currentMonth === month && count === currentDay) ? 'mdl-color-text--primary' : '';
+        const selectedDay = (dayOfMonth === count) ? 'mdl-color--primary selectedDay' : '';
+        const className = `  ${currentDayClass} ${selectedDay}`;
         const key = `datepicker-${r}-${c}-day-${count}`;
         return (
           <Day
@@ -68,7 +70,7 @@ class MonthTable extends React.Component {
       </table>
     );
     return (
-      <div>{table}</div>
+      <div className="reactive-monthtable">{table}</div>
     );
   }
 }

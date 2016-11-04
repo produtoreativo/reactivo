@@ -3,6 +3,7 @@ import moment from 'moment';
 import TopToolbar from './TopToolbar.jsx';
 import BottomToolbar from './BottomToolbar.jsx';
 import MonthTable from './MonthTable.jsx';
+import './Calendar.css';
 
 class Calendar extends React.Component {
 
@@ -44,12 +45,13 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { onClose } = this.props;
+    const { onClose, landscape } = this.props;
     const { date, selected } = this.state;
     const year = selected.format('YYYY');
     const dayOfWeek = selected.format('ddd, MMM DD');
+    const landscapeClass = (landscape) ? 'Calendar-landscape' : '';
     return (
-      <div className="Calendar mdl-dialog__content">
+      <div className={`Calendar ${landscapeClass} mdl-dialog__content`}>
         <div className="SelectedDate mdl-color--primary">
           <div className="year">
             {year}
@@ -58,7 +60,7 @@ class Calendar extends React.Component {
             {dayOfWeek}
           </div>
         </div>
-        <div>
+        <div className="chooseDate">
           <TopToolbar
             date={date}
             onLeft={this.onLeft}

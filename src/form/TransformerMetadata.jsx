@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import uuid from 'uuid';
 import Section from 'form/Section.jsx';
 
 class TransformerMetadata extends React.Component {
@@ -6,6 +7,7 @@ class TransformerMetadata extends React.Component {
   mapSections = ({ description, sectionButtons, sectionFields }) => {
     const { fields } = this.props;
     return <Section
+      key={uuid()}
       fields={fields}
       description={description}
       buttons={sectionButtons}

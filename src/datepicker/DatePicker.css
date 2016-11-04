@@ -1,0 +1,8 @@
+dialog.mdl-dialog {
+  padding: 0;
+  z-index: 10;
+}
+
+dialog.mdl-dialog--landscape {
+  width: 640px;
+}

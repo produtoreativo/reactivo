@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import uuid from 'uuid';
 
 class Tab extends React.Component {
 
@@ -23,7 +24,7 @@ class Tab extends React.Component {
     const className = `mdl-tabs__panel ${(active) ? this.activeClassName : ''}`;
 
     return (
-      <div className={className}>
+      <div key={uuid()} className={className}>
         {this.props.children}
       </div>
     )

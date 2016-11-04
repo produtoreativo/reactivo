@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import DatePicker from './datepicker';
+import TextField from 'textfield/TextField.jsx';
 import Tabs, { Tab } from 'tabs';
 import FormContainer from 'form/FormContainer.jsx';
 import metadata from 'Seed.js';
+import Button from 'button';
 import './App.css';
 
 class App extends Component {
 
   addTab = () => {
 
-    const key = `tab-${new Date().getTime()}`;
+    const key = uuid();
 
     this.refs.tabs.addTab(
       <Tab
@@ -23,8 +26,8 @@ class App extends Component {
   }
 
   render() {
-    const onChange = (date) => {
-      console.log("selected date:", date);
+    const onChange = (text) => {
+      console.log("selected text:", text);
     }
 
     const addTab = this.addTab.bind(this);
@@ -36,21 +39,63 @@ class App extends Component {
         </div>
 
         <Tabs ref="tabs">
-          <Tab key="tab1" active title="Tab one">
-            Content 1
-            <button onClick={addTab}>Add Tab</button>
+          <Tab key="tab1" active title="Add Tab">
+
+            <div className="snippet-demo-container demo-switch demo-switch__switch-on">
+              <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked" htmlFor="switch-1" data-upgraded=",MaterialSwitch,MaterialRipple">
+                <input type="checkbox" id="switch-1" className="mdl-switch__input" checked="" />
+                <span className="mdl-switch__label"></span>
+                <div className="mdl-switch__track"></div>
+                <div className="mdl-switch__thumb">
+                  <span className="mdl-switch__focus-helper"></span>
+                </div>
+                <span className="mdl-switch__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple">
+                  <span className="mdl-ripple is-animating" style={{
+                      width: '137.765px;',
+                      height: '137.765px;',
+                      transform: 'translate(-50%, -50%) translate(24px, 24px);',
+                    }}
+                  />
+                </span>
+              </label>
+            </div>
+
+            <Button onClick={addTab} name="addTab" label="Add Tab" />
           </Tab>
-          <Tab key="tab2" title="Tab Two">
-            Content 2
+
+          <Tab key="tabtext" title="TextField">
+            <TextField
+              key={uuid()}
+              labelName="TextField Example"
+              onChange={onChange}
+            />
+
+            <TextField
+              key={uuid()}
+              labelName="TextField with Erros"
+              onChange={onChange}
+              errors={['Validation error']}
+            />
           </Tab>
-          <Tab key="tab3" title="Title 3">
-            Content 3
+          <Tab key="tab2" title="DatePicker">
+            <DatePicker
+              key={uuid()}
+              labelName="DatePicker"
+              onChange={onChange} />
+
+              <DatePicker
+                key={uuid()}
+                landscape
+                labelName="Landscape DatePicker"
+                onChange={onChange} />
+          </Tab>
+          <Tab key="tab3" title="Form Container">
+            <FormContainer metadata={metadata} />
+          </Tab>
+          <Tab key="tab4" closeable title="Closeable Tab">
+            Content
           </Tab>
         </Tabs>
-
-        <DatePicker onChange={onChange} />
-
-        <FormContainer metadata={metadata} />
 
       </div>
     );

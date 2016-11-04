@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Immutable from 'immutable';
 import Button from 'button/Button.jsx';
 import TextField from 'textfield/TextField.jsx';
+import uuid from 'uuid';
 
 class Section extends React.Component {
 
@@ -10,8 +11,7 @@ class Section extends React.Component {
     onSave: PropTypes.func.isRequired,
   }
 
-  onChange = (field, event) => {
-    const { target: { value } } = event;
+  onChange = (field, value) => {
     const { updateForm } = this.context;
     if (updateForm) {
       updateForm(field, value);
@@ -24,6 +24,7 @@ class Section extends React.Component {
     const { fields } = this.props;
     const field = fields[name];
     return <TextField
+      key={uuid()}
       onChange={this.onChange.bind(this, field)}
       value={field.value}
       labelName={label}
@@ -33,12 +34,12 @@ class Section extends React.Component {
 
   mapSectionColumns = (fieldList) => {
     const fields = fieldList.map(this.mapFields, this);
-    return <div className="FormSectionColumn">{fields}</div>;
+    return <div key={uuid()} className="FormSectionColumn">{fields}</div>;
   }
 
   mapButtons = ({ name, label, onClick }) => {
     const action = this.context[onClick];
-    return <Button onClick={action} name={name} label={label} />
+    return <Button key={uuid()} onClick={action} name={name} label={label} />
   }
 
   render() {

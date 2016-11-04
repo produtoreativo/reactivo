@@ -1,0 +1,15 @@
+.TopToolbar {
+  display: flex;
+  padding: 1rem;
+  padding-bottom: 0;
+  color: #000;
+}
+
+.formatted-month {
+  flex-basis: 100%;
+  line-height: 2rem;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+}

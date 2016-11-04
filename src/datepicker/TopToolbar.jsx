@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
+import './TopToolbar.css';
 
 const TopToolbar = ({ onLeft, date, onRight }) => (
   <div className="TopToolbar">

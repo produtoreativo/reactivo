@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import TabBar from './TabBar.jsx';
+import './Tabs.css';
 
 class Tabs extends Component {
 
@@ -52,7 +53,13 @@ class Tabs extends Component {
     const active = tabs.reduce((active, item) => (
       (item.props.active) ? item : active
     ), tabs[0]);
-    this.setState({ tabs, active });
+    const { cloneElement } = React;
+    this.setState({
+      tabs: tabs.map(tab => cloneElement(tab, {
+        onClose: this.onClose.bind(this, tab)
+      })),
+      active,
+    });
   }
 
   render () {
@@ -60,7 +67,7 @@ class Tabs extends Component {
     const onSelect = this.onSelect.bind(this);
 
     return (
-      <div className="mdl-tabs is-upgraded">
+      <div className="reactivo-tabs mdl-tabs is-upgraded">
         <TabBar onSelect={onSelect}>{tabs}</TabBar>
         {tabs}
       </div>

@@ -5,7 +5,10 @@ import './FormContainer.css';
 
 class FormContainer extends React.Component {
 
-  state = {}
+  state = {
+    fields: {},
+    dirty: {},
+  }
 
   static childContextTypes = {
     updateForm: PropTypes.func,
@@ -20,14 +23,15 @@ class FormContainer extends React.Component {
   }
 
   updateForm = (field, value) => {
-    const { fields } = this.state;
+    const { dirty } = this.state;
     const newField = {
       ...field,
       value,
     };
     this.setState({
-      fields: {
-        ...fields,
+      ...this.state,
+      dirty: {
+        ...dirty,
         [newField.name]: newField,
       }
     });
@@ -71,7 +75,14 @@ class FormContainer extends React.Component {
       }, [])).toJS();
     this.setState({
       fields,
+      dirty: {
+        ...fields,
+      }
     });
+  }
+
+  shouldComponentUpdate() {
+    return false;
   }
 
   render () {

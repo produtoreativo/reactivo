@@ -3,6 +3,7 @@ import dialogPolyfill from 'dialog-polyfill';
 import moment from 'moment';
 import Calendar from './Calendar.jsx';
 import TextField from 'textfield/TextField.jsx';
+import './DatePicker.css';
 
 class DatePicker extends React.Component {
 
@@ -38,21 +39,35 @@ class DatePicker extends React.Component {
     });
   }
 
+  onChangeTextField = () => {
+    // const { onChange } = this.props;
+    // this.setState({ date }, () => {
+    //   if (onChange) {
+    //     onChange(this.state.date);
+    //   }
+    //   this.onClose();
+    // });
+  }
+
   render() {
+    const { labelName, errors, landscape } = this.props;
     const { date } = this.state;
     const value = date.format('DD/MM/YYYY');
+    const landscapeClass = (landscape) ? 'mdl-dialog--landscape' : '';
 
     return (
       <div>
         <TextField
-          labelName="DatePicker..."
+          labelName={labelName}
           value={value}
           onClick={this.onClick}
-          errors={["Erro na validação"]}
+          errors={errors}
+          onChange={this.onChangeTextField}
         />
         <div>
-          <dialog ref="dialog" className="mdl-dialog">
+          <dialog ref="dialog" className={`mdl-dialog ${landscapeClass}`}>
             <Calendar
+              landscape={landscape}
               date={date}
               onClose={this.onClose}
               onChange={this.onChange}

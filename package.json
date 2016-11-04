@@ -1,6 +1,6 @@
 {
   "name": "reactivo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Material Design in React",
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
     "immutable": "^3.8.1",
     "moment": "^2.15.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "uuid": "^2.0.3"
   },
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",

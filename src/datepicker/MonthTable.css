@@ -1,0 +1,10 @@
+.reactive-monthtable table {
+  width: 100%;
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.870588);
+  font-weight: 400;
+}
+
+.reactive-monthtable table thead {
+  opacity: 0.5;
+}
