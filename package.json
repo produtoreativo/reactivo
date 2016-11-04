@@ -1,11 +1,12 @@
 {
   "name": "reactivo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Material Design in React",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/produtoreativo/reactivo.git"
   },
+  "main": "./src/reactivo.js",
   "keywords": [
     "material design",
     "react"
