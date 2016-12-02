@@ -9,3 +9,5 @@ npm run build-min
 
 cp build/static/css/main.*.css lib/reactivo.css
 cp build/static/css/main.*.css.map lib/reactivo.css.map
+
+npm run release

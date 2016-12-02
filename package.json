@@ -9,7 +9,7 @@
   "files": [
     "./src/reactivo-css.js"
   ],
-  "main": "./out/reactivo.js",
+  "main": "./lib/reactivo.js",
   "keywords": [
     "material design",
     "react"
@@ -35,6 +35,7 @@
     "browserify": "^13.1.1",
     "cross-env": "^3.1.3",
     "react-scripts": "0.6.1",
+    "standard-version": "^4.0.0",
     "uglifyify": "^3.0.4",
     "webpack": "^1.13.3"
   },
@@ -65,7 +66,8 @@
     "build-umd": "cross-env NODE_ENV=production webpack src/reactivo.js lib/reactivo.js --output-library Reactivo --output-library-target umd",
     "build-min": "cross-env NODE_ENV=production webpack -p src/reactivo.js lib/reactivo.min.js --output-library Reactivo --output-library-target umd",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
-    "release": "./publish.sh",
+    "release": "standard-version",
+    "publish": "./publish.sh",
     "eject": "react-scripts eject"
   },
   "maintainers": [
