@@ -6,7 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/produtoreativo/reactivo.git"
   },
-  "main": "./src/reactivo.js",
+  "browser": {
+    "./reactivo/bundle.js": "./build/static/js/bundle.js"
+  },
+  "main": "./lib/reactivo.js",
   "keywords": [
     "material design",
     "react"
@@ -17,22 +20,58 @@
     "url": "https://github.com/produtoreativo/reactivo/issues"
   },
   "homepage": "https://github.com/produtoreativo/reactivo#readme",
-  "proxy": "http://beta.greenmile.com/#/RouteMonitor",
   "devDependencies": {
-    "react-scripts": "0.6.1"
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-resolver": "^1.1.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "cross-env": "^3.1.3",
+    "react-scripts": "0.6.1",
+    "uglifyify": "^3.0.4",
+    "webpack": "^1.13.3"
   },
   "dependencies": {
-    "dialog-polyfill": "^0.4.4",
+    "dialog-polyfill": "^0.4.5",
     "immutable": "^3.8.1",
-    "moment": "^2.15.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "moment": "^2.17.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "uuid": "^2.0.3"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      [
+        "uglifyify",
+        {
+          "beautify": false,
+          "comments": false
+        }
+      ]
+    ]
   },
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
+    "compile": "babel src --out-dir lib",
+    "build-umd": "cross-env NODE_ENV=production webpack src/reativo.js out/reactivo.js --output-library Reactivo --output-library-target umd",
+    "build-min": "cross-env NODE_ENV=production webpack -p src/reativo.js out/reactivo.min.js --output-library Reactivo --output-library-target umd",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "maintainers": [
+    {
+      "name": "Christiano Milfont",
+      "email": "cmilfont@milfont.org",
+      "web": "http://produtoreativo.com.br/"
+    }
+  ]
 }

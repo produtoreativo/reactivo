@@ -1,3 +1,3 @@
-import TextField from './TextField.jsx';
+import TextField from './TextField.js';
 
 export default TextField;

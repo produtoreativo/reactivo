@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
 import moment from 'moment';
 import Calendar from './Calendar.jsx';
-import TextField from 'textfield/TextField.jsx';
+import TextField from 'textfield/TextField.js';
 import './DatePicker.css';
 
 class DatePicker extends React.Component {

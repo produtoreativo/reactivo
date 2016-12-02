@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Immutable from 'immutable';
 import Button from 'button/Button.jsx';
-import TextField from 'textfield/TextField.jsx';
+import TextField from 'textfield/TextField.js';
 import uuid from 'uuid';
 
 class Section extends React.Component {

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import TabBar from './TabBar.jsx';
-import './Tabs.css';
+import TabBar from './TabBar.js';
 
 class Tabs extends Component {
 

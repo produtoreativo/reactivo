@@ -3,5 +3,19 @@
     "es2015",
     "react",
     "stage-0"
-  ]
+  ],
+  "plugins": [
+    "transform-runtime",
+    [
+      "resolver",
+      {
+        "resolveDirs": ["src"]
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    }
+  }
 }
