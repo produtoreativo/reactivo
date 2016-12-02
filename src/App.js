@@ -4,7 +4,6 @@ import DatePicker from './datepicker';
 import TextField from 'textfield/TextField.js';
 import { Tabs, Tab } from 'tabs';
 import FormContainer from 'form/FormContainer.jsx';
-import metadata from 'Seed.js';
 import Button from 'button';
 import './App.css';
 import 'reactivo-css.js';
@@ -91,7 +90,6 @@ class App extends Component {
                 onChange={onChange} />
           </Tab>
           <Tab key="tab3" title="Form Container">
-            <FormContainer metadata={metadata} />
           </Tab>
           <Tab key="tab4" closeable title="Closeable Tab">
             Content
