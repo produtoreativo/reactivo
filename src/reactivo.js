@@ -1,3 +1,2 @@
-export { default as Tabs, TabBar, Tab } from './tabs';
-
-export TextField from './textfield';
+export { Tabs, TabBar, Tab } from './tabs';
+export { default as TextField } from './textfield';

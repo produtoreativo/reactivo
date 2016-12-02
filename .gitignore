@@ -1,5 +1,5 @@
 config.vars.env
-
+lib/
 public/assets/js/bundle.js
 
 .idea/workspace.xml

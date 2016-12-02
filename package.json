@@ -6,10 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/produtoreativo/reactivo.git"
   },
-  "browser": {
-    "./reactivo/bundle.js": "./build/static/js/bundle.js"
-  },
-  "main": "./lib/reactivo.js",
+  "files": [
+    "./src/reactivo-css.js"
+  ],
+  "main": "./out/reactivo.js",
   "keywords": [
     "material design",
     "react"
@@ -62,9 +62,10 @@
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
     "compile": "babel src --out-dir lib",
-    "build-umd": "cross-env NODE_ENV=production webpack src/reativo.js out/reactivo.js --output-library Reactivo --output-library-target umd",
-    "build-min": "cross-env NODE_ENV=production webpack -p src/reativo.js out/reactivo.min.js --output-library Reactivo --output-library-target umd",
+    "build-umd": "cross-env NODE_ENV=production webpack src/reactivo.js lib/reactivo.js --output-library Reactivo --output-library-target umd",
+    "build-min": "cross-env NODE_ENV=production webpack -p src/reactivo.js lib/reactivo.min.js --output-library Reactivo --output-library-target umd",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
+    "release": "./publish.sh",
     "eject": "react-scripts eject"
   },
   "maintainers": [
