@@ -1,6 +1,6 @@
 {
   "name": "reactivo",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Material Design in React",
   "repository": {
     "type": "git",
@@ -67,7 +67,7 @@
     "build-min": "cross-env NODE_ENV=production webpack -p src/reactivo.js lib/reactivo.min.js --output-library Reactivo --output-library-target umd",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
     "release": "standard-version",
-    "publish": "./publish.sh",
+    "dist": "./release.sh",
     "eject": "react-scripts eject"
   },
   "maintainers": [
