@@ -7,10 +7,10 @@
     "url": "git+https://github.com/produtoreativo/reactivo.git"
   },
   "files": [
-    "./lib/*.js",
-    "./lib/*.js.map",
-    "./lib/*.css"
-    "./lib/*.css.map"
+    "lib/*.js",
+    "lib/*.js.map",
+    "lib/*.css"
+    "lib/*.css.map"
   ],
   "main": "./lib/reactivo.js",
   "keywords": [
