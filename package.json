@@ -9,7 +9,7 @@
   "files": [
     "lib/*.js",
     "lib/*.js.map",
-    "lib/*.css"
+    "lib/*.css",
     "lib/*.css.map"
   ],
   "main": "./lib/reactivo.js",
