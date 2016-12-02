@@ -1,5 +1,4 @@
 config.vars.env
-lib/
 build/
 public/assets/js/bundle.js
 

@@ -7,7 +7,10 @@
     "url": "git+https://github.com/produtoreativo/reactivo.git"
   },
   "files": [
-    "./src/reactivo-css.js"
+    "./lib/*.js",
+    "./lib/*.js.map",
+    "./lib/*.css"
+    "./lib/*.css.map"
   ],
   "main": "./lib/reactivo.js",
   "keywords": [
@@ -67,7 +70,7 @@
     "build-min": "cross-env NODE_ENV=production webpack -p src/reactivo.js lib/reactivo.min.js --output-library Reactivo --output-library-target umd",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
     "release": "standard-version",
-    "dist": "./release.sh",
+    "dist": "./dist.sh",
     "eject": "react-scripts eject"
   },
   "maintainers": [
