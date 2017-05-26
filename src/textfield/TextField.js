@@ -45,7 +45,7 @@ class TextField extends React.Component {
 
   mapErrors = () => {
     const errors = this.props.errors || [];
-    return errors.map(error => (<b>{error}</b>));
+    return errors.map(error => (<b key={`error-${error}`}>{error}</b>));
   }
 
   handleBlur = () => {

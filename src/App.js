@@ -6,9 +6,17 @@ import { Tabs, Tab } from 'tabs';
 // import FormContainer from 'form/FormContainer.jsx';
 import Button from 'button';
 import './App.css';
-import 'reactivo-css.js';
+
+import Snackbar from 'snackbar';
 
 class App extends Component {
+
+  state = {
+    notification: {
+      message: 'Hello'
+    },
+    open: false,
+  }
 
   addTab = () => {
 
@@ -25,7 +33,17 @@ class App extends Component {
     );
   }
 
+  showNotification = () => {
+    this.setState({
+      notification: {
+        message: 'Agora sim',
+      },
+    });
+  }
+
   render() {
+    const { notification } = this.state;
+
     const onChange = (text) => {
       console.log("selected text:", text);
     }
@@ -39,7 +57,12 @@ class App extends Component {
         </div>
 
         <Tabs ref="tabs">
-          <Tab key="tab1" active title="Add Tab">
+
+          <Tab key="snackbar" active title="Snackbar">
+            <Button label="Show" name="btn-snackbar" onClick={this.showNotification} />
+          </Tab>
+
+          <Tab key="tab1" title="Add Tab">
 
             <div className="snippet-demo-container demo-switch demo-switch__switch-on">
               <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked" htmlFor="switch-1" data-upgraded=",MaterialSwitch,MaterialRipple">
@@ -51,9 +74,9 @@ class App extends Component {
                 </div>
                 <span className="mdl-switch__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple">
                   <span className="mdl-ripple is-animating" style={{
-                      width: '137.765px;',
-                      height: '137.765px;',
-                      transform: 'translate(-50%, -50%) translate(24px, 24px);',
+                      width: '137.765px',
+                      height: '137.765px',
+                      transform: 'translate(-50%, -50%) translate(24px, 24px)',
                     }}
                   />
                 </span>
@@ -96,6 +119,7 @@ class App extends Component {
           </Tab>
         </Tabs>
 
+        <Snackbar notification={notification} timeout={4000} />
       </div>
     );
   }
