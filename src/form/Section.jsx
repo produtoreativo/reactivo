@@ -16,8 +16,6 @@ class Section extends React.Component {
     if (updateForm) {
       updateForm(field, value);
     }
-    event.preventDefault();
-    event.stopPropagation();
   }
 
   mapFields = ({ field: { label, name } }) => {

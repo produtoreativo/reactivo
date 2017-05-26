@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import uuid from 'uuid';
 
 class Tab extends React.Component {

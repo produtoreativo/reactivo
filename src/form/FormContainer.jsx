@@ -37,7 +37,7 @@ class FormContainer extends React.Component {
     });
   }
 
-  onSubmit = () => {
+  onSubmit = (event) => {
     const { onSubmit } = this.props;
     event.preventDefault();
     event.stopPropagation();

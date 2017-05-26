@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import uuid from 'uuid';
 
 class TextField extends React.Component {
@@ -71,7 +71,7 @@ class TextField extends React.Component {
   }
 
   render () {
-    const { onChange, value, focused, invalid, id } = this.state;
+    const { value, focused, invalid, id } = this.state;
     const { labelName, name, onClick } = this.props;
     const isFocused = (focused) ? 'is-focused' : '';
     const isInvalid = (invalid) ? 'is-invalid' : '';

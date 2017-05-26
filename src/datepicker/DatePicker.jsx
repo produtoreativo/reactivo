@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import dialogPolyfill from 'dialog-polyfill';
 import moment from 'moment';
 import Calendar from './Calendar.jsx';
